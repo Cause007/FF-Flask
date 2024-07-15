@@ -16,7 +16,7 @@ def create_student(current_user_token):
     breakpoint()
     FirstName = request.json['FirstName']
     LastName = request.json['LastName']
-    Photo = request.files['Photo']
+    Photo = request.json['Photo']
     Parent1 = request.json['Parent1']
     Parent2 = request.json['Parent2']
     Phone1 = request.json['Phone1']
