@@ -84,7 +84,7 @@ class Student(db.Model):
     id = db.Column(db.String, primary_key=True)
     FirstName = db.Column(db.String(20), nullable=False)
     LastName = db.Column(db.String(20), nullable=False)
-    Photo = db.Column(db.Text)
+    Photo = db.Column(db.String)
     Parent1 = db.Column(db.String(20), nullable=False)
     Parent2 = db.Column(db.String(20))
     Phone1 = db.Column(db.String(13))
