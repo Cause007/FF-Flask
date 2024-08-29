@@ -84,10 +84,10 @@ class Student(db.Model):
     id = db.Column(db.String, primary_key=True)
     FirstName = db.Column(db.String(20), nullable=False)
     LastName = db.Column(db.String(20), nullable=False)
-    Photo = db.Column(db.Text)
+    Photo = db.Column(db.String)
     Parent1 = db.Column(db.String(20), nullable=False)
     Parent2 = db.Column(db.String(20))
-    Phone1 = db.Column(db.String(13))
+    Phone1 = db.Column(db.String(13), nullable=False)
     Phone2 = db.Column(db.String(13))
     Email1 = db.Column(db.String(40))
     Email2 = db.Column(db.String(40))
@@ -95,7 +95,7 @@ class Student(db.Model):
     Address2 = db.Column(db.String(30))
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self, FirstName, LastName, Parent1, Parent2, Phone1, Phone2, Email1, Email2, Address1, Address2, user_token, Photo='', id=''):
+    def __init__(self, user_token, FirstName, LastName, Parent1='', Parent2='', Phone1='', Phone2='', Email1='', Email2='', Address1='', Address2='', Photo='', id=''):
         self.id = self.set_id()
         self.FirstName = FirstName
         self.LastName = LastName
