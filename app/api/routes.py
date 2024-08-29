@@ -13,7 +13,6 @@ def getdata():
 @api.route('/students',methods = ['POST'])
 @token_required
 def create_student(current_user_token):
-    breakpoint()
     FirstName = request.json['FirstName']
     LastName = request.json['LastName']
     Photo = request.json['Photo']
