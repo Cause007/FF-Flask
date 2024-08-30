@@ -10,7 +10,7 @@ api = Blueprint('api', __name__, url_prefix='/api')
 def getdata():
     return {'yee': 'haw'}
 
-@api.route('/students',methods = ['POST'])
+@api.route('/students', methods = ['POST'])
 @token_required
 def create_student(current_user_token):
     FirstName = request.json['FirstName']
@@ -28,7 +28,7 @@ def create_student(current_user_token):
     
     print(f'BIG TESTER: {current_user_token.token}')
 
-    student = Student(FirstName, LastName, Photo, Parent1, Parent2, Phone1, Phone2, Email1, Email2, Address1, Address2, user_token=user_token)
+    student = Student(FirstName, LastName, Photo, Parent1, Parent2, Phone1, Phone2, Email1, Email2, Address1, Address2, user_token = user_token)
 
     db.session.add(student)
     db.session.commit()
