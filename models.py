@@ -95,7 +95,7 @@ class Student(db.Model):
     Address2 = db.Column(db.String(200))
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self, FirstName, LastName, Parent1, Parent2, Phone1, Phone2, Email1, Email2, Address1, Address2, Photo, user_token, id=''):
+    def __init__(self, FirstName, LastName, Photo, Parent1, Parent2, Phone1, Phone2, Email1, Email2, Address1, Address2, user_token, id=''):
         self.id = self.set_id()
         self.FirstName = FirstName
         self.LastName = LastName
