@@ -13,6 +13,7 @@ def getdata():
 @api.route('/students', methods = ['POST'])
 @token_required
 def create_student(current_user_token):
+    # breakpoint()
     FirstName = request.json['FirstName']
     LastName = request.json['LastName']
     Photo = request.json['Photo']
@@ -28,7 +29,7 @@ def create_student(current_user_token):
     
     print(f'BIG TESTER: {current_user_token.token}')
 
-    student = Student(FirstName, LastName, Photo, Parent1, Parent2, Phone1, Phone2, Email1, Email2, Address1, Address2, user_token = user_token)
+    student = Student(FirstName, LastName, Parent1, Parent2, Phone1, Phone2, Email1, Email2, Address1, Address2, Photo, user_token = user_token)
 
     db.session.add(student)
     db.session.commit()
